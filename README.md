@@ -1,7 +1,7 @@
 # NextChat
 JSQMessagesViewController + LeanMessage
  
-![nextchat](https://cloud.githubusercontent.com/assets/5022872/7467236/8e2761ca-f326-11e4-9fe1-0370720a16fe.gif)
+![nextchat](https://cloud.githubusercontent.com/assets/5022872/7467381/28e87c00-f32a-11e4-9afd-39360a8446ff.gif)
 
 # 致谢  
 感谢以下项目和项目作者，
