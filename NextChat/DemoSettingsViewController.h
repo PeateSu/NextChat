@@ -27,12 +27,6 @@
 
 @interface DemoSettingsViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISwitch *extraMessagesSwitch;
-
-@property (weak, nonatomic) IBOutlet UISwitch *longMessageSwitch;
-
-@property (weak, nonatomic) IBOutlet UISwitch *emptySwitch;
-
 @property (weak, nonatomic) IBOutlet UISwitch *incomingAvatarsSwitch;
 
 @property (weak, nonatomic) IBOutlet UISwitch *outgoingAvatarsSwitch;

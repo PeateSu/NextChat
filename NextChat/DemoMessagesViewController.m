@@ -19,6 +19,7 @@
 #import "DemoMessagesViewController.h"
 #import "XHPhotographyHelper.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "XHDisplayMediaViewController.h"
 
 @interface DemoMessagesViewController ()
 
@@ -149,6 +150,8 @@
      */
     self.showTypingIndicator = !self.showTypingIndicator;
     
+    
+
     /**
      *  Scroll to actually view the indicator
      */
@@ -160,8 +163,8 @@
     JSQMessage *copyMessage = [[self.displayMessages lastObject] copy];
     
     if (!copyMessage) {
-        copyMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdJobs
-                                          displayName:kJSQDemoAvatarDisplayNameJobs
+        copyMessage = [JSQMessage messageWithSenderId:kJobsClientID
+                                          displayName:[self displayNameByClientId:kJobsClientID]
                                                  text:@"First received!"];
     }
     
@@ -586,7 +589,13 @@
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapMessageBubbleAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Tapped message bubble!");
+    JSQMessage *message=self.displayMessages[indexPath.row];
+    if([message.media isKindOfClass:[JSQPhotoMediaItem class]] ||
+       [message.media isKindOfClass:[JSQVideoMediaItem class]]){
+        XHDisplayMediaViewController *mediaVC=[[XHDisplayMediaViewController alloc] init];
+        mediaVC.mediaItem=message.media;
+        [self.navigationController pushViewController:mediaVC animated:YES];
+    }
 }
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapCellAtIndexPath:(NSIndexPath *)indexPath touchLocation:(CGPoint)touchLocation
@@ -607,7 +616,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.displayMessages=messages;
                 [weakSelf.collectionView reloadData];
-                [weakSelf scrollToBottomAnimated:NO];
+                [weakSelf scrollToBottomAnimated:YES];
             });
         });
     }];
@@ -628,6 +637,7 @@
     NSDate* timestamp=[NSDate dateWithTimeIntervalSince1970:typedMessage.sendTimestamp/1000];
     NSString *senderId=typedMessage.clientId;
     NSString *senderDisplayName=[self displayNameByClientId:senderId];
+    BOOL outgoing=[self.senderId isEqualToString:typedMessage.clientId];
     switch (msgType) {
         case kAVIMMessageMediaTypeText: {
             AVIMTextMessage *receiveTextMessage = (AVIMTextMessage *)typedMessage;
@@ -640,6 +650,7 @@
             NSData *data=[imageMessage.file getData:&error];
             UIImage *image=[UIImage imageWithData:data];
             JSQPhotoMediaItem *photoItem=[[JSQPhotoMediaItem alloc] initWithImage:image];
+            photoItem.appliesMediaViewMaskAsOutgoing=outgoing;
             message=[[JSQMessage alloc] initWithSenderId:senderId senderDisplayName:senderDisplayName date:timestamp media:photoItem];
             break;
         }
@@ -648,8 +659,9 @@
             NSString* format=receiveVideoMessage.format;
             NSError* error;
             NSString* path=[self fetchDataOfMessageFile:typedMessage.file fileName:[NSString stringWithFormat:@"%@.%@",typedMessage.messageId,format] error:&error];
-            NSURL *videoURL = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@",path]];
+            NSURL *videoURL = [NSURL fileURLWithPath:path];
             JSQVideoMediaItem *videoItem = [[JSQVideoMediaItem alloc] initWithFileURL:videoURL isReadyToPlay:YES];
+            videoItem.appliesMediaViewMaskAsOutgoing=outgoing;
             message = [[JSQMessage alloc] initWithSenderId:senderId senderDisplayName:senderDisplayName date:timestamp media:videoItem];
             break;
         }
@@ -661,7 +673,7 @@
             [locationItem setLocation:location withCompletionHandler:^{
                 [weakSelf.collectionView reloadData];
             }];
-            [locationItem setAppliesMediaViewMaskAsOutgoing:YES];
+            locationItem.appliesMediaViewMaskAsOutgoing=outgoing;
             message=[[JSQMessage alloc] initWithSenderId:senderId senderDisplayName:senderDisplayName date:timestamp media:locationItem];
         }
         default:
@@ -715,6 +727,7 @@
     }];
 }
 
+static CGPoint  delayOffset = {0.0};
 -(void)loadOldMessages{
     if(self.displayMessages.count==0){
         return;
@@ -728,9 +741,11 @@
                     [oldMessages addObject:[weakSelf displayMessageByAVIMTypedMessage:typedMessage]];
                 }
                 NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:oldMessages.count];
+                delayOffset = weakSelf.collectionView.contentOffset;
                 [oldMessages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
                     [indexPaths addObject:indexPath];
+                    delayOffset.y+=[weakSelf.collectionView.collectionViewLayout sizeForItemAtIndexPath:indexPath].height;
                 }];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIView setAnimationsEnabled:NO];
@@ -738,6 +753,7 @@
                     [messages addObjectsFromArray:weakSelf.displayMessages];
                     weakSelf.displayMessages=messages;
                     [weakSelf.collectionView insertItemsAtIndexPaths:indexPaths];
+                    [weakSelf.collectionView setContentOffset:delayOffset];
                     [UIView setAnimationsEnabled:YES];
                 });
             });

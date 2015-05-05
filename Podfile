@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'NextChat' do
-    pod 'JSQMessagesViewController'
+    pod 'JSQMessagesViewController',:git => 'https://github.com/jessesquires/JSQMessagesViewController.git',:branch => 'develop'
     pod 'AVOSCloud'
     pod 'AVOSCloudIM'
 end

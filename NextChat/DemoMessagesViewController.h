@@ -20,24 +20,14 @@
 // Import all the things
 #import "JSQMessages.h"
 
-#import "DemoModelData.h"
 #import "NSUserDefaults+DemoSettings.h"
 #import "LeanMessageManager.h"
 
 
 @class DemoMessagesViewController;
 
-@protocol JSQDemoViewControllerDelegate <NSObject>
-
-- (void)didDismissJSQDemoViewController:(DemoMessagesViewController *)vc;
-
-@end
-
-
 @interface DemoMessagesViewController : JSQMessagesViewController <UIActionSheetDelegate>
 
 @property (nonatomic,strong) AVIMConversation *conversation;
-
-- (void)receiveMessagePressed:(UIBarButtonItem *)sender;
 
 @end

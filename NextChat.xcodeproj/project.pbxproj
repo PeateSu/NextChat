@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70349D641AF789C800B1AE7C /* XHPhotographyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70349D631AF789C800B1AE7C /* XHPhotographyHelper.m */; };
+		70A15AE31AF87519001D177D /* XHDisplayMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A15AE21AF87519001D177D /* XHDisplayMediaViewController.m */; };
 		70A8F2461AF7575200C6FA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2451AF7575200C6FA16 /* main.m */; };
 		70A8F2491AF7575200C6FA16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2481AF7575200C6FA16 /* AppDelegate.m */; };
 		70A8F2521AF7575200C6FA16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A8F2501AF7575200C6FA16 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		70A8F2571AF7575200C6FA16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A8F2551AF7575200C6FA16 /* LaunchScreen.xib */; };
 		70A8F2631AF7575200C6FA16 /* NextChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2621AF7575200C6FA16 /* NextChatTests.m */; };
 		70A8F2761AF759D800C6FA16 /* DemoMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F26D1AF759D800C6FA16 /* DemoMessagesViewController.m */; };
-		70A8F2771AF759D800C6FA16 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F26F1AF759D800C6FA16 /* DemoModelData.m */; };
 		70A8F2781AF759D800C6FA16 /* DemoSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2711AF759D800C6FA16 /* DemoSettingsViewController.m */; };
 		70A8F2791AF759D800C6FA16 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2731AF759D800C6FA16 /* NSUserDefaults+DemoSettings.m */; };
 		70A8F27A1AF759D800C6FA16 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2751AF759D800C6FA16 /* TableViewController.m */; };
@@ -38,6 +38,8 @@
 		50430FE90CCE00166A9F5CE6 /* Pods-NextChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NextChat/Pods-NextChat.debug.xcconfig"; sourceTree = "<group>"; };
 		70349D621AF789C800B1AE7C /* XHPhotographyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotographyHelper.h; sourceTree = "<group>"; };
 		70349D631AF789C800B1AE7C /* XHPhotographyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotographyHelper.m; sourceTree = "<group>"; };
+		70A15AE11AF87519001D177D /* XHDisplayMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDisplayMediaViewController.h; sourceTree = "<group>"; };
+		70A15AE21AF87519001D177D /* XHDisplayMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDisplayMediaViewController.m; sourceTree = "<group>"; };
 		70A8F2401AF7575200C6FA16 /* NextChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A8F2441AF7575200C6FA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A8F2451AF7575200C6FA16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,8 +53,6 @@
 		70A8F2621AF7575200C6FA16 /* NextChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextChatTests.m; sourceTree = "<group>"; };
 		70A8F26C1AF759D800C6FA16 /* DemoMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMessagesViewController.h; sourceTree = "<group>"; };
 		70A8F26D1AF759D800C6FA16 /* DemoMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMessagesViewController.m; sourceTree = "<group>"; };
-		70A8F26E1AF759D800C6FA16 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
-		70A8F26F1AF759D800C6FA16 /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
 		70A8F2701AF759D800C6FA16 /* DemoSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSettingsViewController.h; sourceTree = "<group>"; };
 		70A8F2711AF759D800C6FA16 /* DemoSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSettingsViewController.m; sourceTree = "<group>"; };
 		70A8F2721AF759D800C6FA16 /* NSUserDefaults+DemoSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+DemoSettings.h"; sourceTree = "<group>"; };
@@ -100,6 +100,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		70A15AE01AF87519001D177D /* XHDisplayMediaViewController */ = {
+			isa = PBXGroup;
+			children = (
+				70A15AE11AF87519001D177D /* XHDisplayMediaViewController.h */,
+				70A15AE21AF87519001D177D /* XHDisplayMediaViewController.m */,
+			);
+			path = XHDisplayMediaViewController;
+			sourceTree = "<group>";
+		};
 		70A8F2371AF7575200C6FA16 = {
 			isa = PBXGroup;
 			children = (
@@ -123,11 +132,10 @@
 		70A8F2421AF7575200C6FA16 /* NextChat */ = {
 			isa = PBXGroup;
 			children = (
+				70A15AE01AF87519001D177D /* XHDisplayMediaViewController */,
 				70A8F2851AF7620C00C6FA16 /* LeanCloud */,
 				70A8F26C1AF759D800C6FA16 /* DemoMessagesViewController.h */,
 				70A8F26D1AF759D800C6FA16 /* DemoMessagesViewController.m */,
-				70A8F26E1AF759D800C6FA16 /* DemoModelData.h */,
-				70A8F26F1AF759D800C6FA16 /* DemoModelData.m */,
 				70A8F2701AF759D800C6FA16 /* DemoSettingsViewController.h */,
 				70A8F2711AF759D800C6FA16 /* DemoSettingsViewController.m */,
 				70A8F2721AF759D800C6FA16 /* NSUserDefaults+DemoSettings.h */,
@@ -322,7 +330,7 @@
 				70A8F27A1AF759D800C6FA16 /* TableViewController.m in Sources */,
 				70A8F2781AF759D800C6FA16 /* DemoSettingsViewController.m in Sources */,
 				70A8F2761AF759D800C6FA16 /* DemoMessagesViewController.m in Sources */,
-				70A8F2771AF759D800C6FA16 /* DemoModelData.m in Sources */,
+				70A15AE31AF87519001D177D /* XHDisplayMediaViewController.m in Sources */,
 				70A8F2881AF7620C00C6FA16 /* LeanMessageManager.m in Sources */,
 				70349D641AF789C800B1AE7C /* XHPhotographyHelper.m in Sources */,
 			);

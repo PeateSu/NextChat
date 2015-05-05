@@ -52,106 +52,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Messages" id="ygb-Dp-o4r">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Eii-ro-1yZ">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eii-ro-1yZ" id="qU9-o3-MWC">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7N-os-fuc">
-                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="49" id="A6s-Sr-u8U"/>
-                                                        <constraint firstAttribute="height" constant="31" id="z9i-uJ-MBq"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <action selector="didTapSwitch:" destination="y7K-ZU-Xs9" eventType="valueChanged" id="Ebi-bs-7Bc"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load extra messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSS-CD-nfD">
-                                                    <rect key="frame" x="8" y="10" width="247" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="bSS-CD-nfD" firstAttribute="top" secondItem="qU9-o3-MWC" secondAttribute="top" constant="10" id="4Iw-W0-qZs"/>
-                                                <constraint firstAttribute="trailing" secondItem="K7N-os-fuc" secondAttribute="trailing" constant="8" id="Fex-nr-C1R"/>
-                                                <constraint firstItem="bSS-CD-nfD" firstAttribute="leading" secondItem="qU9-o3-MWC" secondAttribute="leading" constant="8" id="N5B-E5-Pzk"/>
-                                                <constraint firstItem="K7N-os-fuc" firstAttribute="leading" secondItem="bSS-CD-nfD" secondAttribute="trailing" constant="8" id="O2Y-G9-d6n"/>
-                                                <constraint firstAttribute="centerY" secondItem="K7N-os-fuc" secondAttribute="centerY" id="j7N-59-vRk"/>
-                                                <constraint firstAttribute="bottom" secondItem="bSS-CD-nfD" secondAttribute="bottom" constant="9" id="poL-wE-Eir"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bZI-G1-eYA">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bZI-G1-eYA" id="1Ho-Zz-KN0">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMq-Ee-EJK">
-                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="gM4-dK-cl7"/>
-                                                        <constraint firstAttribute="width" constant="49" id="hvu-Yy-NTG"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <action selector="didTapSwitch:" destination="y7K-ZU-Xs9" eventType="valueChanged" id="JCb-EJ-M9U"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load really long message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV3-GH-Yul">
-                                                    <rect key="frame" x="8" y="10" width="247" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="hMq-Ee-EJK" secondAttribute="centerY" id="CcO-KD-31y"/>
-                                                <constraint firstItem="hMq-Ee-EJK" firstAttribute="leading" secondItem="YV3-GH-Yul" secondAttribute="trailing" constant="8" id="KFO-nO-4r4"/>
-                                                <constraint firstItem="YV3-GH-Yul" firstAttribute="top" secondItem="1Ho-Zz-KN0" secondAttribute="top" constant="10" id="Lgl-fY-a8c"/>
-                                                <constraint firstAttribute="bottom" secondItem="YV3-GH-Yul" secondAttribute="bottom" constant="9" id="NvL-b8-QDl"/>
-                                                <constraint firstAttribute="trailing" secondItem="hMq-Ee-EJK" secondAttribute="trailing" constant="8" id="xDE-tf-5mB"/>
-                                                <constraint firstItem="YV3-GH-Yul" firstAttribute="leading" secondItem="1Ho-Zz-KN0" secondAttribute="leading" constant="8" id="xyR-oc-iUp"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Th-gL-oAN">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Th-gL-oAN" id="OFq-Mz-mbl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baL-Tb-bTJ">
-                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="49" id="SaV-RG-DVL"/>
-                                                        <constraint firstAttribute="height" constant="31" id="dXb-pb-etA"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <action selector="didTapSwitch:" destination="y7K-ZU-Xs9" eventType="valueChanged" id="w1H-5W-oip"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty view, no messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoU-SU-Nek">
-                                                    <rect key="frame" x="8" y="10" width="247" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="DoU-SU-Nek" firstAttribute="leading" secondItem="OFq-Mz-mbl" secondAttribute="leading" constant="8" id="A9k-hI-0BH"/>
-                                                <constraint firstItem="DoU-SU-Nek" firstAttribute="top" secondItem="OFq-Mz-mbl" secondAttribute="top" constant="10" id="Uji-LE-8IA"/>
-                                                <constraint firstAttribute="trailing" secondItem="baL-Tb-bTJ" secondAttribute="trailing" constant="8" id="dUp-7b-g3p"/>
-                                                <constraint firstItem="baL-Tb-bTJ" firstAttribute="leading" secondItem="DoU-SU-Nek" secondAttribute="trailing" constant="8" id="fxZ-zy-ksL"/>
-                                                <constraint firstAttribute="bottom" secondItem="DoU-SU-Nek" secondAttribute="bottom" constant="9" id="h0B-EX-3MW"/>
-                                                <constraint firstAttribute="centerY" secondItem="baL-Tb-bTJ" secondAttribute="centerY" id="hx4-cn-W0h"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Avatars" id="ns0-OO-PGu">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hYS-4f-iL6">
@@ -264,10 +164,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="hrw-Dp-Tor"/>
                     <connections>
-                        <outlet property="emptySwitch" destination="baL-Tb-bTJ" id="qk7-dH-53U"/>
-                        <outlet property="extraMessagesSwitch" destination="K7N-os-fuc" id="qlF-0W-3JO"/>
                         <outlet property="incomingAvatarsSwitch" destination="fLZ-NC-aPO" id="0ck-t9-Hwt"/>
-                        <outlet property="longMessageSwitch" destination="hMq-Ee-EJK" id="Vs2-fX-Hys"/>
                         <outlet property="outgoingAvatarsSwitch" destination="LuM-mk-Zj6" id="EAh-35-xjI"/>
                         <outlet property="springySwitch" destination="uXC-2j-cgi" id="Jzx-1y-VZP"/>
                     </connections>
