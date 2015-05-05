@@ -727,7 +727,6 @@
     }];
 }
 
-static CGPoint  delayOffset = {0.0};
 -(void)loadOldMessages{
     if(self.displayMessages.count==0){
         return;
@@ -741,20 +740,21 @@ static CGPoint  delayOffset = {0.0};
                     [oldMessages addObject:[weakSelf displayMessageByAVIMTypedMessage:typedMessage]];
                 }
                 NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:oldMessages.count];
-                delayOffset = weakSelf.collectionView.contentOffset;
                 [oldMessages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
                     [indexPaths addObject:indexPath];
-                    delayOffset.y+=[weakSelf.collectionView.collectionViewLayout sizeForItemAtIndexPath:indexPath].height;
                 }];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIView setAnimationsEnabled:NO];
-                    NSMutableArray *messages = [NSMutableArray arrayWithArray:oldMessages];
-                    [messages addObjectsFromArray:weakSelf.displayMessages];
-                    weakSelf.displayMessages=messages;
+                    NSMutableArray *displayMessages = [NSMutableArray arrayWithArray:oldMessages];
+                    [displayMessages addObjectsFromArray:weakSelf.displayMessages];
+                    weakSelf.displayMessages=displayMessages;
                     [weakSelf.collectionView insertItemsAtIndexPaths:indexPaths];
-                    [weakSelf.collectionView setContentOffset:delayOffset];
                     [UIView setAnimationsEnabled:YES];
+                    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:oldMessages.count  inSection:0];
+                    if(indexPath.row<self.displayMessages.count){
+                        [weakSelf.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+                    }
                 });
             });
         }];

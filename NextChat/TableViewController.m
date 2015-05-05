@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"JSQMessagesViewController";
+    self.title = @"NextChat";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -104,7 +104,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return (section == [tableView numberOfSections] - 1) ? @"Copyright © 2014\nJesse Squires\nMIT License" : nil;
+    return (section == [tableView numberOfSections] - 1) ? @"Copyright © 2014\nJesse Squires, LeanCloud \nMIT License" : nil;
 }
 
 #pragma mark - Table view delegate
