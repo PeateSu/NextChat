@@ -35,29 +35,6 @@
 
 @implementation DemoMessagesViewController
 
-#pragma mark - user info
-/**
- * 配置头像
- */
-- (JSQMessagesAvatarImage*)avatarByClientId:(NSString*)clientId{
-    
-//    JSQMessagesAvatarImage *jsqImage = [JSQMessagesAvatarImageFactory avatarImageWithUserInitials:@"JSQ" backgroundColor:[UIColor colorWithWhite:0.85f alpha:1.0f] textColor:[UIColor colorWithWhite:0.60f alpha:1.0f] font:[UIFont systemFontOfSize:14.0f] diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
-    
-    NSDictionary *imageNames=@{kCookClientID:@"demo_avatar_cook",
-                               kJobsClientID:@"demo_avatar_jobs",
-                               kWozClientID:@"demo_avatar_woz"};
-    NSString *imageName=imageNames[clientId];
-    JSQMessagesAvatarImage *avatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:imageName] diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
-    return avatar;
-}
-
-/**
- * 配置用户名
- */
-- (NSString*)displayNameByClientId:(NSString*)clientId{
-    return clientId;
-}
-
 #pragma mark - View lifecycle
 /**
  *  Override point for customization.
@@ -307,10 +284,7 @@
      *  2. Add new id<JSQMessageData> object to your data source
      *  3. Call `finishSendingMessage`
      */
-    [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    
-    AVIMTextMessage *message=[AVIMTextMessage messageWithText:text attributes:nil];
-    [self sendMessage:message];
+    [self didSendMessageWithText:text];
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender
@@ -362,8 +336,6 @@
             [self.photographyHelper showOnPickerViewControllerSourceType:UIImagePickerControllerSourceTypeCamera onViewController:self compled:PickerMediaBlock];
             break;
     }
-    [JSQSystemSoundPlayer jsq_playMessageSentSound];
-    [self finishSendingMessageAnimated:YES];
 }
 
 
@@ -704,23 +676,13 @@
     });
 }
 
--(void)sendMessage:(AVIMTypedMessage*)message{
-    WEAKSELF
-    [self.conversation sendMessage:message callback:^(BOOL succeeded, NSError *error) {
-        if([weakSelf filterError:error]){
-            [weakSelf addMessage:message completion:^{
-                [weakSelf finishSendingMessageAnimated:YES];
-            }];
-        }
-    }];
-}
-
 -(void)setupReceiveMessageBlock{
     WEAKSELF
     [[LeanMessageManager manager] setupDidReceiveTypedMessageCompletion:^(AVIMConversation *conversation, AVIMTypedMessage *message) {
         // 富文本信息
         if([conversation.conversationId isEqualToString:self.conversation.conversationId]){
             [weakSelf addMessage:message completion:^{
+                [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
                 [weakSelf finishReceivingMessage];
             }];
         }
@@ -768,6 +730,23 @@
     return _photographyHelper;
 }
 
+-(void)sendMessage:(AVIMTypedMessage*)message{
+    WEAKSELF
+    [self.conversation sendMessage:message callback:^(BOOL succeeded, NSError *error) {
+        [JSQSystemSoundPlayer jsq_playMessageSentSound];
+        if([weakSelf filterError:error]){
+            [weakSelf addMessage:message completion:^{
+                [weakSelf finishSendingMessageAnimated:YES];
+            }];
+        }
+    }];
+}
+
+-(void)didSendMessageWithText:(NSString*)text{
+    AVIMTextMessage *message=[AVIMTextMessage messageWithText:text attributes:nil];
+    [self sendMessage:message];
+}
+
 -(void)didSendMessageWithPhoto:(UIImage*)photo{
     NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"tmp.jpg"];
     NSData* photoData=UIImageJPEGRepresentation(photo,1.0);
@@ -784,6 +763,29 @@
 -(void)didSendMessageWithLatitude:(long)latitude longitude:(long)longitude{
     AVIMLocationMessage *message=[AVIMLocationMessage messageWithText:@"北京" latitude:39.f longitude:116.f attributes:nil];
     [self sendMessage:message];
+}
+
+#pragma mark - user info
+/**
+ * 配置头像
+ */
+- (JSQMessagesAvatarImage*)avatarByClientId:(NSString*)clientId{
+    
+    //    JSQMessagesAvatarImage *jsqImage = [JSQMessagesAvatarImageFactory avatarImageWithUserInitials:@"JSQ" backgroundColor:[UIColor colorWithWhite:0.85f alpha:1.0f] textColor:[UIColor colorWithWhite:0.60f alpha:1.0f] font:[UIFont systemFontOfSize:14.0f] diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
+    
+    NSDictionary *imageNames=@{kCookClientID:@"demo_avatar_cook",
+                               kJobsClientID:@"demo_avatar_jobs",
+                               kWozClientID:@"demo_avatar_woz"};
+    NSString *imageName=imageNames[clientId];
+    JSQMessagesAvatarImage *avatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:imageName] diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
+    return avatar;
+}
+
+/**
+ * 配置用户名
+ */
+- (NSString*)displayNameByClientId:(NSString*)clientId{
+    return clientId;
 }
 
 @end
