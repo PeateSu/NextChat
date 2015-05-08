@@ -588,7 +588,8 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.displayMessages=messages;
                 [weakSelf.collectionView reloadData];
-                [weakSelf scrollToBottomAnimated:YES];
+                [weakSelf.collectionView layoutIfNeeded];
+                [weakSelf scrollToBottomAnimated:NO];
             });
         });
     }];
