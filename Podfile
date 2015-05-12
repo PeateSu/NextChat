@@ -3,8 +3,8 @@
 
 target 'NextChat' do
     pod 'JSQMessagesViewController',:git => 'https://github.com/jessesquires/JSQMessagesViewController.git',:branch => 'develop'
-    pod 'AVOSCloud'
-    pod 'AVOSCloudIM'
+#    pod 'AVOSCloud'
+#    pod 'AVOSCloudIM'
 end
 
 target 'NextChatTests' do

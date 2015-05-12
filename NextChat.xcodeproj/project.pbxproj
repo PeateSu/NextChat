@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		70349D641AF789C800B1AE7C /* XHPhotographyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70349D631AF789C800B1AE7C /* XHPhotographyHelper.m */; };
 		70A15AE31AF87519001D177D /* XHDisplayMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A15AE21AF87519001D177D /* XHDisplayMediaViewController.m */; };
+		70A8D3FC1B01EE5C005B8F23 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D3E91B01EDF6005B8F23 /* AVOSCloud.framework */; };
+		70A8D3FD1B01EE5C005B8F23 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D3F11B01EDF6005B8F23 /* AVOSCloudIM.framework */; };
+		70A8D3FF1B01EEFE005B8F23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D3FE1B01EEFE005B8F23 /* SystemConfiguration.framework */; };
+		70A8D4011B01EF05005B8F23 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D4001B01EF05005B8F23 /* MobileCoreServices.framework */; };
+		70A8D4031B01EF0C005B8F23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D4021B01EF0C005B8F23 /* CoreTelephony.framework */; };
+		70A8D4051B01EF13005B8F23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D4041B01EF13005B8F23 /* CoreLocation.framework */; };
+		70A8D4071B01EF1B005B8F23 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D4061B01EF1B005B8F23 /* libicucore.dylib */; };
+		70A8D40A1B01EFEE005B8F23 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A8D4091B01EFEE005B8F23 /* libsqlite3.dylib */; };
 		70A8F2461AF7575200C6FA16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2451AF7575200C6FA16 /* main.m */; };
 		70A8F2491AF7575200C6FA16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A8F2481AF7575200C6FA16 /* AppDelegate.m */; };
 		70A8F2521AF7575200C6FA16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A8F2501AF7575200C6FA16 /* Main.storyboard */; };
@@ -24,6 +32,76 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		70A8D3E81B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419861A5A791300C5C6C4;
+			remoteInfo = AVOSCloud;
+		};
+		70A8D3EA1B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419911A5A791300C5C6C4;
+			remoteInfo = AVOSCloudTests;
+		};
+		70A8D3EC1B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419A51A5A794600C5C6C4;
+			remoteInfo = AVOSCloudSNS;
+		};
+		70A8D3EE1B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419AF1A5A794600C5C6C4;
+			remoteInfo = AVOSCloudSNSTests;
+		};
+		70A8D3F01B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419C31A5A796000C5C6C4;
+			remoteInfo = AVOSCloudIM;
+		};
+		70A8D3F21B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419CD1A5A796000C5C6C4;
+			remoteInfo = AVOSCloudIMTests;
+		};
+		70A8D3F41B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C255D261AE9F815008A6FFC;
+			remoteInfo = AVOSCloudCrashReporting;
+		};
+		70A8D3F61B01EDF6005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C255D301AE9F817008A6FFC;
+			remoteInfo = AVOSCloudCrashReportingTests;
+		};
+		70A8D3F81B01EE09005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C8419851A5A791300C5C6C4;
+			remoteInfo = AVOSCloud;
+		};
+		70A8D3FA1B01EE0C005B8F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C8419C21A5A796000C5C6C4;
+			remoteInfo = AVOSCloudIM;
+		};
 		70A8F25D1AF7575200C6FA16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 70A8F2381AF7575200C6FA16 /* Project object */;
@@ -40,6 +118,13 @@
 		70349D631AF789C800B1AE7C /* XHPhotographyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotographyHelper.m; sourceTree = "<group>"; };
 		70A15AE11AF87519001D177D /* XHDisplayMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDisplayMediaViewController.h; sourceTree = "<group>"; };
 		70A15AE21AF87519001D177D /* XHDisplayMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDisplayMediaViewController.m; sourceTree = "<group>"; };
+		70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVOS.xcodeproj; path = "../../clojure/iOS-sdk/AVOS/AVOS.xcodeproj"; sourceTree = "<group>"; };
+		70A8D3FE1B01EEFE005B8F23 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		70A8D4001B01EF05005B8F23 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		70A8D4021B01EF0C005B8F23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		70A8D4041B01EF13005B8F23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		70A8D4061B01EF1B005B8F23 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		70A8D4091B01EFEE005B8F23 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		70A8F2401AF7575200C6FA16 /* NextChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A8F2441AF7575200C6FA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A8F2451AF7575200C6FA16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +154,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A8D40A1B01EFEE005B8F23 /* libsqlite3.dylib in Frameworks */,
+				70A8D4071B01EF1B005B8F23 /* libicucore.dylib in Frameworks */,
+				70A8D4051B01EF13005B8F23 /* CoreLocation.framework in Frameworks */,
+				70A8D4031B01EF0C005B8F23 /* CoreTelephony.framework in Frameworks */,
+				70A8D4011B01EF05005B8F23 /* MobileCoreServices.framework in Frameworks */,
+				70A8D3FF1B01EEFE005B8F23 /* SystemConfiguration.framework in Frameworks */,
+				70A8D3FC1B01EE5C005B8F23 /* AVOSCloud.framework in Frameworks */,
+				70A8D3FD1B01EE5C005B8F23 /* AVOSCloudIM.framework in Frameworks */,
 				C920517DB69EA7726AC21654 /* libPods-NextChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +188,12 @@
 		23369058B03BDAACD09C9D7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70A8D4091B01EFEE005B8F23 /* libsqlite3.dylib */,
+				70A8D4061B01EF1B005B8F23 /* libicucore.dylib */,
+				70A8D4041B01EF13005B8F23 /* CoreLocation.framework */,
+				70A8D4021B01EF0C005B8F23 /* CoreTelephony.framework */,
+				70A8D4001B01EF05005B8F23 /* MobileCoreServices.framework */,
+				70A8D3FE1B01EEFE005B8F23 /* SystemConfiguration.framework */,
 				4BFF5AB78982C26DB7017693 /* libPods-NextChat.a */,
 			);
 			name = Frameworks;
@@ -109,9 +208,25 @@
 			path = XHDisplayMediaViewController;
 			sourceTree = "<group>";
 		};
+		70A8D3DD1B01EDF6005B8F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70A8D3E91B01EDF6005B8F23 /* AVOSCloud.framework */,
+				70A8D3EB1B01EDF6005B8F23 /* AVOSCloudTests.xctest */,
+				70A8D3ED1B01EDF6005B8F23 /* AVOSCloudSNS.framework */,
+				70A8D3EF1B01EDF6005B8F23 /* AVOSCloudSNSTests.xctest */,
+				70A8D3F11B01EDF6005B8F23 /* AVOSCloudIM.framework */,
+				70A8D3F31B01EDF6005B8F23 /* AVOSCloudIMTests.xctest */,
+				70A8D3F51B01EDF6005B8F23 /* AVOSCloudCrashReporting.framework */,
+				70A8D3F71B01EDF6005B8F23 /* AVOSCloudCrashReportingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		70A8F2371AF7575200C6FA16 = {
 			isa = PBXGroup;
 			children = (
+				70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */,
 				70A8F2421AF7575200C6FA16 /* NextChat */,
 				70A8F25F1AF7575200C6FA16 /* NextChatTests */,
 				70A8F2411AF7575200C6FA16 /* Products */,
@@ -205,6 +320,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				70A8D3FB1B01EE0C005B8F23 /* PBXTargetDependency */,
+				70A8D3F91B01EE09005B8F23 /* PBXTargetDependency */,
 			);
 			name = NextChat;
 			productName = NextChat;
@@ -258,6 +375,12 @@
 			mainGroup = 70A8F2371AF7575200C6FA16;
 			productRefGroup = 70A8F2411AF7575200C6FA16 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 70A8D3DD1B01EDF6005B8F23 /* Products */;
+					ProjectRef = 70A8D3DC1B01EDF6005B8F23 /* AVOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				70A8F23F1AF7575200C6FA16 /* NextChat */,
@@ -265,6 +388,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		70A8D3E91B01EDF6005B8F23 /* AVOSCloud.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloud.framework;
+			remoteRef = 70A8D3E81B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3EB1B01EDF6005B8F23 /* AVOSCloudTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudTests.xctest;
+			remoteRef = 70A8D3EA1B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3ED1B01EDF6005B8F23 /* AVOSCloudSNS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudSNS.framework;
+			remoteRef = 70A8D3EC1B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3EF1B01EDF6005B8F23 /* AVOSCloudSNSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudSNSTests.xctest;
+			remoteRef = 70A8D3EE1B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3F11B01EDF6005B8F23 /* AVOSCloudIM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudIM.framework;
+			remoteRef = 70A8D3F01B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3F31B01EDF6005B8F23 /* AVOSCloudIMTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudIMTests.xctest;
+			remoteRef = 70A8D3F21B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3F51B01EDF6005B8F23 /* AVOSCloudCrashReporting.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudCrashReporting.framework;
+			remoteRef = 70A8D3F41B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		70A8D3F71B01EDF6005B8F23 /* AVOSCloudCrashReportingTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AVOSCloudCrashReportingTests.xctest;
+			remoteRef = 70A8D3F61B01EDF6005B8F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		70A8F23E1AF7575200C6FA16 /* Resources */ = {
@@ -347,6 +529,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		70A8D3F91B01EE09005B8F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AVOSCloud;
+			targetProxy = 70A8D3F81B01EE09005B8F23 /* PBXContainerItemProxy */;
+		};
+		70A8D3FB1B01EE0C005B8F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AVOSCloudIM;
+			targetProxy = 70A8D3FA1B01EE0C005B8F23 /* PBXContainerItemProxy */;
+		};
 		70A8F25E1AF7575200C6FA16 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 70A8F23F1AF7575200C6FA16 /* NextChat */;
@@ -459,6 +651,7 @@
 			baseConfigurationReference = 50430FE90CCE00166A9F5CE6 /* Pods-NextChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = NextChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -470,6 +663,7 @@
 			baseConfigurationReference = 76B5811957AFF0B069CF9479 /* Pods-NextChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = NextChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

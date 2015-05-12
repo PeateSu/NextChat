@@ -10,6 +10,8 @@
 	<string>NextChat</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>D1F9F70025FA660182F75266D3D4F5D7ECED2B2C</key>
+		<string>github.com:lzwjava/ios-sdk.git</string>
 		<key>FF1C2D41E3A9B52DCF28320BBC080690D0341AA9</key>
 		<string>github.com:leancloud/NextChat.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>NextChat.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>D1F9F70025FA660182F75266D3D4F5D7ECED2B2C</key>
+		<string>../../clojure/iOS-sdk</string>
 		<key>FF1C2D41E3A9B52DCF28320BBC080690D0341AA9</key>
 		<string>..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>FF1C2D41E3A9B52DCF28320BBC080690D0341AA9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D1F9F70025FA660182F75266D3D4F5D7ECED2B2C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-sdk</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
